@@ -63,6 +63,9 @@ function startRecording() {
 	      mimeType : 'audio/'+extension+';codecs=opus'
 	    }
 
+	    //update the format 
+		document.getElementById("formats").innerHTML='Sample rate: 48kHz, MIME: audio/'+extension+';codecs=opus';
+
 		/* 
 			Create the MediaRecorder object
 		*/

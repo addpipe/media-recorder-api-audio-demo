@@ -3,13 +3,20 @@
   <head>
     <meta charset="UTF-8">
     <title>MediaRecorder API audio recording demo with pause function</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-  	<h3>Controls</h3>
-  	<button id="recordButton">Record</button>
-  	<button id="pauseButton" disabled>Pause</button>
-  	<button id="stopButton" disabled>Stop</button>
-
+    <h1>Recording audio using MediaRecorder API</h1>
+    <p>The <a href="https://w3c.github.io/mediacapture-record/" target="_blank">MediaRecorder API</a> makes media recording in the browser super easy. It allows storing chunks of data from a media stream as blobs, which can later be concatenated as a single file. The file can then be saved locally or uploaded/POSTed to the web server.</p>
+    <p>Unfortunately it is only supported by Chrome, Firefox and Opera. Please comment on the <a target="_blank" href="https://bugs.webkit.org/show_bug.cgi?id=85851">Safari/WebKit feature request</a> and the <a target="_blank" href="https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/6261360-media-recorder">Edge feature request</a>.</p>
+    <p>The video recording demo is available <a href="https://addpipe.com/media-recorder-api-demo/" target="_blank">here</a>.</p>
+  	<div id="controls">
+  	 <button id="recordButton">Record</button>
+  	 <button id="pauseButton" disabled>Pause</button>
+  	 <button id="stopButton" disabled>Stop</button>
+    </div>
+    <div id="formats"></div>
   	<h3>Recordings</h3>
   	<ol id="recordingsList"></ol>
 
