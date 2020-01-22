@@ -2,26 +2,32 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>MediaRecorder API audio recording demo with pause function</title>
+
+    <title>Recording Audio With the MediaStream Recorder API - addpipe.com</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <h1>Recording audio using MediaRecorder API</h1>
-    <p>The <a href="https://w3c.github.io/mediacapture-record/" target="_blank">MediaRecorder API</a> makes media recording in the browser super easy. It allows storing chunks of data from a media stream as blobs, which can later be concatenated as a single file. The file can then be saved locally or uploaded/POSTed to the web server.</p>
-    <p>Unfortunately it is only supported by Chrome, Firefox and Opera. Please comment on the <a target="_blank" href="https://bugs.webkit.org/show_bug.cgi?id=85851">Safari/WebKit feature request</a> and the <a target="_blank" href="https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/6261360-media-recorder">Edge feature request</a>.</p>
-    <p>The video recording demo is available <a href="https://addpipe.com/media-recorder-api-demo/" target="_blank">here</a>.</p>
-  	<div id="controls">
-  	 <button id="recordButton">Record</button>
-  	 <button id="pauseButton" disabled>Pause</button>
-  	 <button id="stopButton" disabled>Stop</button>
+    <h1>Recording audio with the MediaStream Recorder API</h1>
+    <p><small>Made by the <a href="https://addpipe.com" target="_blank">Pipe Video Recording Platform</a></small></p>
+    <p>This demo below shows you <strong>how to record audio directly in the browser</strong> using native browser APIs. The <a href="https://w3c.github.io/mediacapture-record/" target="_blank">MediaStream Recorder API</a> makes media recording in the browser very easy. It allows capturing chunks of (audio) data from a microphone media stream as blobs, which can later be concatenated in a single audio file. The file can then be saved locally or uploaded/POSTed to the web server. <span style="text-decoration: underline;">Recorded audio files contain Opus audio and have the .webm extension</span>.</p>
+    <p>At the moment the MediaStream Recorder API is only supported by Chrome, Firefox, Opera and Edge 79 (Chromium). Please comment on <a target="_blank" href="https://bugs.webkit.org/show_bug.cgi?id=85851">this Safari/WebKit feature request</a> to request Safari support.</p>
+    <p>We've also built a video recording demo which is available <a href="https://addpipe.com/media-recorder-api-demo/" target="_blank">here</a>.</p>
+    <div style="max-width: 28em;">
+    	<div id="controls">
+    	 <button id="recordButton">Record</button>
+    	 <button id="pauseButton" disabled>Pause</button>
+    	 <button id="stopButton" disabled>Stop</button>
+      </div>
+      <div id="formats"></div>
+    	<p><strong>Recordings:</strong></p>
+    	<ol id="recordingsList"></ol>
     </div>
-    <div id="formats"></div>
-  	<h3>Recordings</h3>
-  	<ol id="recordingsList"></ol>
-
     <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
   	<script src="js/app.js"></script>
-    
   </body>
 </html>
